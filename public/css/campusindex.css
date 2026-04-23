@@ -1,0 +1,265 @@
+:root {
+  --primario: #00aaaa;
+  --primario-dark: #007f7f;
+  --oscuro: #1a1a2e;
+  --gris-bg: #f0f4f8;
+  --texto: #1e293b;
+  --muted: #64748b;
+  --borde: #e2e8f0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--gris-bg);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.header {
+  background: #fff;
+  border-bottom: 3px solid var(--primario);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,170,170,0.08);
+}
+
+.header-logo img {
+  height: 48px;
+  object-fit: contain;
+}
+
+.header-acciones {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--muted);
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+}
+
+.icon-btn:hover {
+  background: #f1f5f9;
+  color: var(--primario);
+}
+
+.badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #f97316;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.separador {
+  width: 1px;
+  height: 28px;
+  background: var(--borde);
+  margin: 0 8px;
+}
+
+.usuario-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--oscuro);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+}
+
+.usuario-nombre {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--texto);
+  white-space: nowrap;
+}
+
+/* ── MAIN ── */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px;
+}
+
+.bienvenida {
+  margin-bottom: 36px;
+}
+
+.bienvenida h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--oscuro);
+  margin-bottom: 6px;
+}
+
+.bienvenida p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ── GRID DE MATERIAS ── */
+.materias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* ── TARJETA ── */
+.tarjeta-materia {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid var(--borde);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  animation: fadeUp 0.4s ease both;
+}
+
+.tarjeta-materia:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,170,170,0.15);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.tarjeta-banner {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  position: relative;
+}
+
+.tarjeta-pin {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.25);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.tarjeta-pin:hover { background: rgba(255,255,255,0.45); }
+.tarjeta-pin.pinned { color: #fbbf24; }
+
+.tarjeta-body {
+  padding: 18px 20px 20px;
+}
+
+.tarjeta-codigo {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.tarjeta-nombre {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--oscuro);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.tarjeta-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.tarjeta-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tarjeta-footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--borde);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-entrar {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primario);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+  font-family: inherit;
+}
+
+.btn-entrar:hover { gap: 10px; }
+
+.tarjeta-creditos {
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--gris-bg);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}

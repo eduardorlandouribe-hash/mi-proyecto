@@ -1,0 +1,513 @@
+/* RESET — elimina márgenes y paddings por defecto del navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Variables de color — cambia aquí para afectar toda la página */
+:root {
+  --color-primario: #00aaaa;
+  --color-oscuro: #1a1a2e;
+  --color-gris: #f5f5f5;
+  --color-texto: #333;
+  --color-muted: #777;
+}
+
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 70px;
+  background: #fff;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.header-izquierda {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-btn {
+  background: var(--color-primario);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.menu-btn:hover {
+  background: #008888;
+}
+
+.logo-img {
+  width: 260px;
+  height: 60px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.nav-principal {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-principal a {
+  text-decoration: none;
+  color: var(--color-texto);
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.nav-principal a:hover { color: var(--color-primario); }
+
+.nav-secundario {
+  display: flex;
+  gap: 14px;
+}
+
+.nav-secundario a {
+  text-decoration: none;
+  color: var(--color-texto);
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.nav-secundario a:hover { color: var(--color-primario); }
+
+.header-opciones {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.campus-btn {
+  text-decoration: none;
+  color: var(--color-texto);
+  font-size: 14px;
+  border: 1px solid #ccc;
+  padding: 5px 12px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.campus-btn:hover {
+  border-color: var(--color-primario);
+  color: var(--color-primario);
+}
+
+
+/* SECCIONES — estilos generales compartidos */
+main { padding: 0; }
+
+section {
+  padding: 60px 80px;
+}
+
+/* Las secciones pares tienen fondo gris claro */
+section:nth-child(even) {
+  background: var(--color-gris);
+}
+
+/* Etiqueta pequeña encima del título (ej: "INSTITUCIONAL", "MEDIOS") */
+.seccion-tag {
+  color: var(--color-primario);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Botón con borde turquesa */
+.btn-ver {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid var(--color-primario);
+  padding: 10px 22px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.btn-ver:hover {
+  background: var(--color-primario);
+  color: #fff;
+}
+
+/* Link simple con flecha */
+.link-conoce {
+  display: inline-block;
+  margin-top: 24px;
+  color: var(--color-primario);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.link-conoce:hover { text-decoration: underline; }
+
+
+/* SECCIÓN 1 — UCC EN CIFRAS */
+.cifras {
+  background: var(--color-oscuro);
+  color: #fff;
+  text-align: center;
+}
+
+.cifras h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.cifras-subtitulo {
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.cifras-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.cifra-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.numero {
+  font-size: 40px;
+  font-weight: 900;
+  color: #00ccdd;
+}
+
+.etiqueta {
+  font-size: 14px;
+  color: #ccc;
+}
+
+
+/* SECCIÓN 2 — INSTITUCIONAL */
+.institucional {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.institucional-texto {
+  flex: 1;
+}
+
+.institucional-texto h2 {
+  font-size: 29px;
+  margin: 10px 0 16px;
+  color: var(--color-oscuro);
+  line-height: 1.3;
+}
+
+.institucional-texto p {
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.institucional-imagen {
+  flex: 1.5;
+}
+
+.institucional-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+/* SECCIÓN 3 — MEDIOS */
+.medios {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Columna izquierda: video principal */
+.medios-video {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.medios-video iframe {
+  width: 100%;
+  height: 320px;
+  border: none;
+  border-radius: 8px;
+}
+
+.medios-video-titulo {
+  font-weight: 700;
+  color: var(--color-oscuro);
+  font-size: 16px;
+}
+
+/* Columna derecha: texto y miniaturas */
+.medios-contenido {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.medios-contenido h2 {
+  font-size: 32px;
+  color: var(--color-oscuro);
+}
+
+.medios-contenido p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* Fila con "Últimos videos" y "Ver canal" */
+.medios-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.medios-header h3 {
+  color: var(--color-oscuro);
+  font-size: 16px;
+}
+
+.link-canal {
+  color: var(--color-primario);
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Grid de 3 miniaturas */
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-texto);
+}
+
+.video-card img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: opacity 0.2s;
+}
+
+.video-card img:hover { opacity: 0.8; }
+
+.video-card p {
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+
+/* SECCIÓN 4 — CIENCIA ABIERTA */
+.ciencia {
+  text-align: center;
+}
+
+.ciencia h2 {
+  font-size: 32px;
+  color: var(--color-oscuro);
+  margin-bottom: 8px;
+}
+
+.ciencia-subtitulo {
+  color: var(--color-primario);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+}
+
+/* Grid de 3 columnas iguales */
+.tarjetas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.tarjeta {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+
+.tarjeta:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.tarjeta-imagen {
+  position: relative;
+  height: 160px;
+}
+
+.tarjeta-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Etiqueta amarilla flotante encima de la imagen */
+.tarjeta-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f0c000;
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
+.tarjeta-contenido {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tarjeta-contenido h4 {
+  color: var(--color-oscuro);
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.tarjeta-contenido p {
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.btn-tarjeta {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--color-primario);
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 600;
+  border-top: 1px solid #ddd;
+  padding-top: 12px;
+  transition: color 0.2s;
+}
+
+.btn-tarjeta:hover { color: #007788; }
+
+
+/* FOOTER */
+.footer {
+  background: var(--color-oscuro);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+}
+
+.footer-iconos,
+.footer-redes {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.footer-iconos a,
+.footer-redes a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.footer-redes img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.footer-iconos a:hover,
+.footer-redes a:hover { color: #fff; }
+
+.footer-iconos img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+
+/* TOOLTIP — texto que aparece al pasar el cursor sobre los iconos del footer */
+.tooltip {
+  position: relative;
+}
+
+/* Oculto por defecto, aparece con :hover */
+.tooltip-texto {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primario);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.tooltip:hover .tooltip-texto {
+  display: block;
+}
