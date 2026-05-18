@@ -13,9 +13,7 @@ class FacturaController extends Controller
 {
     public function store()
     {
-        $user = Auth::guard('timonel')->user();
-
-        // Obtener materias inscritas
+       $user = Auth::guard('timonel')->user();
         $inscripciones = Inscripcion::where('estudiante_id', $user->id)
             ->with('materia')
             ->get();
@@ -24,27 +22,24 @@ class FacturaController extends Controller
             return back()->with('error', 'No tienes materias inscritas.');
         }
 
-        // Calcular total (valor por crédito: $150,000)
-        $valorCredito = 350000;
+        $valorCredito = 150000;
         $total = $inscripciones->sum(fn($i) => $i->materia->creditos * $valorCredito);
 
-        // Generar número de factura
         $numero = 'FAC-' . date('Y') . '-' . str_pad(
             Factura::count() + 1, 3, '0', STR_PAD_LEFT
         );
 
-        // Crear la factura
-        $factura = Factura::create([
-            'numero'        => $numero,
-            'estudiante_id' => $user->id,
-            'total'         => $total,
-            'estado'        => 'pendiente',
-        ]);
+        $factura = Factura::updateOrCreate(
+            ['estudiante_id' => $user->id],
+            [
+                'numero' => $numero,
+                'total'  => $total,
+                'estado' => 'pendiente',
+            ]
+        );
 
         return redirect()->route('timonel.factura.show', $factura->id);
     }
-
-    // Mostrar factura
     public function show($id)
     {
         $user = Auth::guard('timonel')->user();
@@ -52,7 +47,6 @@ class FacturaController extends Controller
         $inscripciones = Inscripcion::where('estudiante_id', $user->id)
             ->with('materia')
             ->get();
-
         return view('timonel.estudiante.factura', 
             compact('user', 'factura', 'inscripciones'));
     }

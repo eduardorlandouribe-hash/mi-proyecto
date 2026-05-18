@@ -59,4 +59,52 @@ class TimonelController extends Controller
             ->get();
         return view('timonel.profesor.estudiantes', compact('user', 'materia', 'estudiantes'));
     }
+    public function financiero()
+    {
+        $user = Auth::guard('timonel')->user();
+        $factura = \App\Models\Factura::where('estudiante_id', $user->id)
+            ->latest()
+            ->first();
+        $inscripciones = \App\Models\Inscripcion::where('estudiante_id', $user->id)
+            ->with('materia')
+            ->get();
+        return view('timonel.estudiante.financiero', compact('user', 'factura', 'inscripciones'));
+    }
+    public function perfil()
+    {
+        $user = Auth::guard('timonel')->user();
+        return view('timonel.estudiante.perfil', compact('user'));
+    }
+
+    public function perfilUpdate(Request $request)
+    {
+        $user = Auth::guard('timonel')->user();
+        $request->validate([
+            'name'  => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+        ]);
+
+        $user->name  = $request->name;
+        $user->email = $request->email;
+
+        if ($request->filled('password')) {
+            if (!\Hash::check($request->password_actual, $user->password)) {
+                return back()->withErrors(['password_actual' => 'La contraseña actual es incorrecta.']);
+            }
+            $request->validate([
+                'password' => 'min:6|confirmed',
+            ]);
+            $user->password = \Hash::make($request->password);
+        }
+        $user->save();
+        return back()->with('success', 'Cambios guardados correctamente.');
+    } 
+    public function notas()
+    {
+        $user = Auth::guard('timonel')->user();
+        $notas = \App\Models\Nota::where('estudiante_id', $user->id)
+            ->with('materia')
+            ->get();
+        return view('timonel.estudiante.notas', compact('user', 'notas'));
+    }  
 }

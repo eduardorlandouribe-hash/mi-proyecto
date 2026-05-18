@@ -78,8 +78,18 @@ Route::prefix('timonel')->name('timonel.')->group(function () {
     ->name('profesor.index');
     Route::get('/profesor/materia/{id}', [TimonelController::class, 'profesorEstudiantes'])
     ->name('profesor.estudiantes');
-});
-
+    // ── FINANCIERO ──
+    Route::get('/financiero', [TimonelController::class, 'financiero'])
+    ->name('financiero');
+    // ── PERFIL ──
+    Route::get('/perfil', [TimonelController::class, 'perfil'])
+    ->name('perfil');
+    Route::patch('/perfil', [TimonelController::class, 'perfilUpdate'])
+    ->name('perfil.update');
+    // ── NOTAS ──
+    Route::get('/notas', [TimonelController::class, 'notas'])
+    ->name('notas');
+    });
 });
 
 //rutas del campus

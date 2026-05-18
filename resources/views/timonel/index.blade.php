@@ -58,7 +58,7 @@
                 </div>
             </a>
 
-            <a href="#" style="text-decoration:none; color:inherit;">
+            <a href="{{ route('timonel.perfil')}}" style="text-decoration:none; color:inherit;">
                 <div class="tarjeta" style="--color: #8b5cf6">
                     <div class="tarjeta-icono">
                         <i class="fas fa-user-circle"></i>
@@ -71,7 +71,7 @@
                 </div>
             </a>
 
-            <a href="#" style="text-decoration:none; color:inherit;">
+            <a href="{{ route('timonel.notas')}}" style="text-decoration:none; color:inherit;">
                 <div class="tarjeta" style="--color: #10b981">
                     <div class="tarjeta-icono">
                         <i class="fas fa-chart-bar"></i>
@@ -84,7 +84,7 @@
                 </div>
             </a>
 
-            <a href="#" style="text-decoration:none; color:inherit;">
+            <a href="{{ route('timonel.financiero')}}" style="text-decoration:none; color:inherit;">
                 <div class="tarjeta" style="--color: #f59e0b">
                     <div class="tarjeta-icono">
                         <i class="fas fa-file-invoice-dollar"></i>

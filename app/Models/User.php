@@ -58,5 +58,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Factura::class, 'estudiante_id');
     }
+    public function notas()
+    {
+        return $this->hasMany(Nota::class, 'estudiante_id');
+    }
 
 }
