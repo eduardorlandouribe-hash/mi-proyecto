@@ -1,0 +1,295 @@
+/* ═══════════════════════════════════
+   materiaDetalle.css
+   Requiere: timonel-nuevo.css (global)
+   ═══════════════════════════════════ */
+
+/* ── Header con nombre de materia centrado ── */
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.header-materia-nombre {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--oscuro);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+  display: block;
+}
+
+/* ── Banner de la materia ── */
+.materia-banner-card {
+  border-radius: 18px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.banner-emoji {
+  font-size: 56px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.banner-info h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 14px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.banner-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.banner-chips .chip {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(4px);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.banner-chips .chip i { font-size: 11px; opacity: 0.8; }
+
+/* ── Lista de materiales ── */
+.material-item {
+  background: #fff;
+  border: 1.5px solid var(--borde);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+  transition: box-shadow 0.2s;
+}
+
+.material-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+.material-icono {
+  font-size: 26px;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.material-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.material-nombre {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--oscuro);
+}
+
+.material-meta {
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.material-tipo {
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.material-acciones { flex-shrink: 0; }
+
+.btn-material-accion {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 9px;
+  border: 1.5px solid var(--borde);
+  background: var(--gris-bg);
+  color: var(--texto);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-material-accion:hover {
+  border-color: var(--primario);
+  color: var(--primario);
+  background: #fff;
+}
+
+/* ── Grid de tareas ── */
+.tareas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* ── Tarjeta de tarea ── */
+.tarea-card {
+  background: #fff;
+  border: 1.5px solid var(--borde);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.2s;
+}
+
+.tarea-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+
+.tarea-card-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tarea-estado-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: 20px;
+}
+
+.tarea-estado-badge.pendiente  { background: #fef3c7; color: #d97706; }
+.tarea-estado-badge.entregada  { background: #d1fae5; color: #059669; }
+.tarea-estado-badge.vencida    { background: #fef2f2; color: #dc2626; }
+
+.tarea-titulo {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--oscuro);
+  line-height: 1.35;
+}
+
+.tarea-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.tarea-fecha {
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.tarea-fecha.fecha-vencida { color: #dc2626; }
+.tarea-fecha i { font-size: 11px; }
+
+.tarea-footer {
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-tarea-entregar {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primario);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-tarea-entregar:hover { background: var(--primario-dark); }
+
+.btn-tarea-entregas {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 10px;
+  border: 1.5px solid var(--borde);
+  background: var(--gris-bg);
+  color: var(--texto);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-tarea-entregas:hover {
+  border-color: var(--primario);
+  color: var(--primario);
+  background: #fff;
+}
+
+/* ── Empty states ── */
+.detalle-empty {
+  text-align: center;
+  padding: 56px 24px;
+  background: #fff;
+  border-radius: 14px;
+  border: 1.5px solid var(--borde);
+}
+
+.detalle-empty i {
+  font-size: 44px;
+  color: var(--borde);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.detalle-empty p {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 5px;
+}
+
+.detalle-empty span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .header-center { display: none; }
+  .materia-banner-card { flex-direction: column; align-items: flex-start; }
+  .banner-emoji { font-size: 40px; }
+  .banner-info h1 { font-size: 18px; }
+  .tareas-grid { grid-template-columns: 1fr; }
+}

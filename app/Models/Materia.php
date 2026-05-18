@@ -22,4 +22,13 @@ class Materia extends Model
     {
         return $this->hasMany(Inscripcion::class);
     }
+    public function materiales()
+    {
+        return $this->hasMany(Material::class);
+    }
+
+    public function tareas()
+    {
+        return $this->hasMany(Tarea::class);
+    }
 }

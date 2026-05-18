@@ -1,0 +1,221 @@
+/* ═══════════════════════════════════
+   perfil.css
+   Estilos específicos de perfil.html
+   Requiere: timonel-nuevo.css (global)
+   ═══════════════════════════════════ */
+
+/* ── Tarjeta de perfil superior ── */
+.perfil-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid var(--borde);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.avatar-grande {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--oscuro);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.perfil-info { display: flex; flex-direction: column; gap: 6px; }
+
+.perfil-nombre {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--oscuro);
+}
+
+.perfil-correo {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.perfil-rol {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+/* ── Formulario de edición ── */
+.form-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid var(--borde);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.form-card-header {
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--borde);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-card-header h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--oscuro);
+}
+
+.form-card-header i {
+  color: var(--primario);
+  font-size: 16px;
+}
+
+.form-card-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.form-seccion-titulo {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--muted);
+  margin-bottom: 16px;
+  margin-top: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.form-seccion-titulo:first-child { margin-top: 0; }
+
+.campo-grupo {
+  margin-bottom: 16px;
+}
+
+.campo-grupo label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.campo-grupo input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--borde);
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--texto);
+  background: var(--gris-bg);
+  outline: none;
+  transition: border 0.2s, background 0.2s;
+}
+
+.campo-grupo input:focus {
+  border-color: var(--primario);
+  background: #fff;
+}
+
+.campo-grupo input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.campo-fila {
+  display: flex;
+  gap: 16px;
+}
+
+.campo-fila .campo-grupo { flex: 1; }
+
+/* Input con icono */
+.input-wrap {
+  position: relative;
+}
+
+.input-wrap i {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.input-wrap i:hover { color: var(--primario); }
+
+.input-wrap input { padding-right: 40px; }
+
+/* ── Botón guardar ── */
+.form-card-footer {
+  padding: 20px 28px;
+  border-top: 1px solid var(--borde);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-guardar-perfil {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 24px;
+  background: var(--primario);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-guardar-perfil:hover { background: var(--primario-dark); }
+
+/* ── Mensaje de éxito ── */
+.msg-exito {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #d1fae5;
+  border: 1.5px solid #6ee7b7;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #065f46;
+}
+
+.msg-exito.visible { display: inline-flex; }
+.msg-exito i { font-size: 14px; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .perfil-card { flex-direction: column; align-items: flex-start; }
+  .campo-fila  { flex-direction: column; }
+  .form-card-body { padding: 20px 16px; }
+  .form-card-footer { padding: 16px; }
+  .form-card-header { padding: 16px; }
+}

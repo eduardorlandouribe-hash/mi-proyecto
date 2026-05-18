@@ -1,156 +1,44 @@
-:root {
-  --primario: #00aaaa;
-  --primario-dark: #007f7f;
-  --oscuro: #1a1a2e;
-  --gris-bg: #f0f4f8;
-  --texto: #1e293b;
-  --muted: #64748b;
-  --borde: #e2e8f0;
-}
+/* ═══════════════════════════════════
+   campusIndex.css — rediseño
+   Requiere: timonel-nuevo.css (global)
+   ═══════════════════════════════════ */
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background: var(--gris-bg);
-  color: var(--texto);
-  min-height: 100vh;
-}
-
-/* ── HEADER ── */
-.header {
-  background: #fff;
-  border-bottom: 3px solid var(--primario);
-  height: 68px;
+/* ── Bienvenida ── */
+.bienvenida-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 32px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 12px rgba(0,170,170,0.08);
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
 }
 
-.header-logo img {
-  height: 48px;
-  object-fit: contain;
-}
-
-.header-acciones {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.icon-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  color: var(--muted);
-  position: relative;
-  transition: background 0.2s, color 0.2s;
-}
-
-.icon-btn:hover {
-  background: #f1f5f9;
-  color: var(--primario);
-}
-
-.badge {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  background: #f97316;
-  color: #fff;
-  font-size: 9px;
-  font-weight: 700;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.separador {
-  width: 1px;
-  height: 28px;
-  background: var(--borde);
-  margin: 0 8px;
-}
-
-.usuario-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--oscuro);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: 0.5px;
-}
-
-.usuario-nombre {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--texto);
-  white-space: nowrap;
-}
-
-/* ── MAIN ── */
-.main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 32px;
-}
-
-.bienvenida {
-  margin-bottom: 36px;
-}
-
-.bienvenida h1 {
-  font-size: 28px;
+.bienvenida-header h1 {
+  font-size: 26px;
   font-weight: 800;
   color: var(--oscuro);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
-.bienvenida p {
+.bienvenida-header p {
+  font-size: 14px;
   color: var(--muted);
-  font-size: 15px;
 }
 
-/* ── GRID DE MATERIAS ── */
+/* ── Grid de materias ── */
 .materias-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+  gap: 20px;
 }
 
-/* ── TARJETA ── */
+/* ── Tarjeta de materia ── */
 .tarjeta-materia {
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
+  border: 1.5px solid var(--borde);
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  border: 1px solid var(--borde);
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
   animation: fadeUp 0.4s ease both;
@@ -162,65 +50,89 @@ body {
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Banner superior de color */
 .tarjeta-banner {
-  height: 100px;
+  height: 96px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 36px;
+  justify-content: space-between;
+  padding: 0 16px;
   position: relative;
 }
 
+.tarjeta-emoji {
+  font-size: 36px;
+  line-height: 1;
+}
+
+/* Badge "Profesor" en el banner */
+.tarjeta-badge-prof {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+}
+
+/* Botón pin */
 .tarjeta-pin {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.2);
   border: none;
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #fff;
-  font-size: 13px;
-  transition: background 0.2s;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  transition: background 0.2s, color 0.2s;
 }
 
-.tarjeta-pin:hover { background: rgba(255,255,255,0.45); }
+.tarjeta-pin:hover { background: rgba(255,255,255,0.4); color: #fff; }
 .tarjeta-pin.pinned { color: #fbbf24; }
 
+/* Cuerpo de la tarjeta */
 .tarjeta-body {
-  padding: 18px 20px 20px;
+  padding: 16px 18px 14px;
 }
 
 .tarjeta-codigo {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--muted);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 .tarjeta-nombre {
   font-size: 15px;
   font-weight: 700;
   color: var(--oscuro);
-  line-height: 1.4;
+  line-height: 1.35;
   margin-bottom: 12px;
 }
 
 .tarjeta-meta {
   display: flex;
-  align-items: center;
-  gap: 14px;
+  flex-direction: column;
+  gap: 5px;
   font-size: 12px;
   color: var(--muted);
 }
@@ -228,20 +140,41 @@ body {
 .tarjeta-meta span {
   display: flex;
   align-items: center;
+  gap: 7px;
+}
+
+.tarjeta-meta i {
+  color: var(--primario);
+  width: 13px;
+  flex-shrink: 0;
+}
+
+/* Footer de la tarjeta */
+.tarjeta-footer {
+  padding: 11px 18px;
+  border-top: 1px solid var(--borde);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tarjeta-creditos {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--gris-bg);
+  padding: 4px 11px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
   gap: 5px;
 }
 
-.tarjeta-footer {
-  padding: 12px 20px;
-  border-top: 1px solid var(--borde);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+.tarjeta-creditos i { color: var(--primario); font-size: 11px; }
 
 .btn-entrar {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--primario);
   background: none;
   border: none;
@@ -249,17 +182,61 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  transition: gap 0.2s;
+  transition: gap 0.2s, color 0.2s;
   font-family: inherit;
 }
 
-.btn-entrar:hover { gap: 10px; }
+.btn-entrar:hover { gap: 10px; color: var(--primario-dark); }
+.btn-entrar i { font-size: 11px; }
 
-.tarjeta-creditos {
-  font-size: 12px;
+/* ── Badge notificaciones del header ── */
+.notif-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #f97316;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
+/* ── Empty state ── */
+.campus-empty {
+  text-align: center;
+  padding: 72px 24px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid var(--borde);
+}
+
+.campus-empty i {
+  font-size: 52px;
+  color: var(--borde);
+  margin-bottom: 18px;
+  display: block;
+}
+
+.campus-empty p {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 6px;
+}
+
+.campus-empty span {
+  font-size: 13px;
   color: var(--muted);
-  background: var(--gris-bg);
-  padding: 3px 10px;
-  border-radius: 20px;
-  font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .bienvenida-header h1 { font-size: 20px; }
+  .materias-grid { grid-template-columns: 1fr; }
 }

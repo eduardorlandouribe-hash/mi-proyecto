@@ -1,0 +1,185 @@
+/* ═══════════════════════════════════
+   financiero.css
+   Estilos específicos de financiero.html
+   Requiere: timonel-nuevo.css (global)
+   ═══════════════════════════════════ */
+
+/* ── Tarjeta resumen superior ── */
+.resumen-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid var(--borde);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.resumen-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.resumen-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+}
+
+.resumen-valor {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primario);
+  line-height: 1;
+}
+
+.resumen-valor.normal {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.resumen-divider {
+  width: 1px;
+  height: 56px;
+  background: var(--borde);
+}
+
+/* Badges de estado */
+.estado-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.estado-badge.pendiente { background: #fef3c7; color: #d97706; }
+.estado-badge.pagado    { background: #d1fae5; color: #059669; }
+
+/* ── Tabla financiera ── */
+.tabla-financiera-wrap {
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid var(--borde);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 24px;
+}
+
+.tabla-financiera {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-financiera thead {
+  background: var(--gris-bg);
+}
+
+.tabla-financiera th {
+  padding: 12px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+  border-bottom: 1px solid var(--borde);
+}
+
+.tabla-financiera td {
+  padding: 15px 20px;
+  font-size: 14px;
+  color: var(--texto);
+  border-bottom: 1px solid var(--borde);
+}
+
+.tabla-financiera tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-financiera tbody tr:hover {
+  background: #fafafa;
+}
+
+/* Fila total */
+.fila-total td {
+  background: var(--gris-bg);
+  font-weight: 700;
+  border-top: 2px solid var(--borde);
+}
+
+.fila-total .total-valor {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primario);
+}
+
+/* ── Acciones inferiores ── */
+.acciones-bottom {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.btn-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--oscuro);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-pdf:hover { background: #2d2d4e; }
+
+/* ── Empty state ── */
+.empty-state {
+  text-align: center;
+  padding: 64px 24px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px solid var(--borde);
+}
+
+.empty-state i {
+  font-size: 48px;
+  color: var(--borde);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.empty-state p {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 6px;
+}
+
+.empty-state span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .resumen-card { flex-direction: column; align-items: flex-start; }
+  .resumen-divider { width: 100%; height: 1px; }
+  .resumen-valor { font-size: 26px; }
+}
