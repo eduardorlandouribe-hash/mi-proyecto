@@ -45,63 +45,71 @@
 
         <div class="tarjetas-grid">
 
-            <div class="tarjeta" style="--color: #00aaaa">
-                <div class="tarjeta-icono">
-                    <i class="fas fa-book-open"></i>
+            <a href="{{ route('timonel.inscripcion.index') }}" style="text-decoration:none; color:inherit;">
+                <div class="tarjeta" style="--color: #00aaaa">
+                    <div class="tarjeta-icono">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="tarjeta-info">
+                        <h3>Mis Materias</h3>
+                        <p>Consulta las materias inscritas en el semestre actual</p>
+                    </div>
+                    <i class="fas fa-arrow-right tarjeta-flecha"></i>
                 </div>
-                <div class="tarjeta-info">
-                    <h3>Mis Materias</h3>
-                    <p>Consulta las materias inscritas en el semestre actual</p>
-                </div>
-                <i class="fas fa-arrow-right tarjeta-flecha"></i>
-            </div>
+            </a>
 
-            <div class="tarjeta" style="--color: #8b5cf6">
-                <div class="tarjeta-icono">
-                    <i class="fas fa-user-circle"></i>
+            <a href="#" style="text-decoration:none; color:inherit;">
+                <div class="tarjeta" style="--color: #8b5cf6">
+                    <div class="tarjeta-icono">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="tarjeta-info">
+                        <h3>Mi Perfil</h3>
+                        <p>Ve y edita tu información personal y académica</p>
+                    </div>
+                    <i class="fas fa-arrow-right tarjeta-flecha"></i>
                 </div>
-                <div class="tarjeta-info">
-                    <h3>Mi Perfil</h3>
-                    <p>Ve y edita tu información personal y académica</p>
-                </div>
-                <i class="fas fa-arrow-right tarjeta-flecha"></i>
-            </div>
+            </a>
 
-            <div class="tarjeta" style="--color: #10b981">
-                <div class="tarjeta-icono">
-                    <i class="fas fa-chart-bar"></i>
+            <a href="#" style="text-decoration:none; color:inherit;">
+                <div class="tarjeta" style="--color: #10b981">
+                    <div class="tarjeta-icono">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="tarjeta-info">
+                        <h3>Mis Notas</h3>
+                        <p>Revisa tus calificaciones por materia y semestre</p>
+                    </div>
+                    <i class="fas fa-arrow-right tarjeta-flecha"></i>
                 </div>
-                <div class="tarjeta-info">
-                    <h3>Mis Notas</h3>
-                    <p>Revisa tus calificaciones por materia y semestre</p>
-                </div>
-                <i class="fas fa-arrow-right tarjeta-flecha"></i>
-            </div>
+            </a>
 
-            <div class="tarjeta" style="--color: #f59e0b">
-                <div class="tarjeta-icono">
-                    <i class="fas fa-file-invoice-dollar"></i>
+            <a href="#" style="text-decoration:none; color:inherit;">
+                <div class="tarjeta" style="--color: #f59e0b">
+                    <div class="tarjeta-icono">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="tarjeta-info">
+                        <h3>Financiero</h3>
+                        <p>Consulta el estado de tu matrícula y pagos pendientes</p>
+                    </div>
+                    <i class="fas fa-arrow-right tarjeta-flecha"></i>
                 </div>
-                <div class="tarjeta-info">
-                    <h3>Financiero</h3>
-                    <p>Consulta el estado de tu matrícula y pagos pendientes</p>
-                </div>
-                <i class="fas fa-arrow-right tarjeta-flecha"></i>
-            </div>
+            </a>
 
             @if($user->rol === 'admin')
-            <div class="tarjeta" style="--color: #ef4444">
-                <div class="tarjeta-icono">
-                    <i class="fas fa-shield-alt"></i>
+            <a href="{{ route('timonel.admin') }}" style="text-decoration:none; color:inherit;">
+                <div class="tarjeta" style="--color: #ef4444">
+                    <div class="tarjeta-icono">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="tarjeta-info">
+                        <h3>Panel Admin</h3>
+                        <p>Gestiona materias, estudiantes y configuración</p>
+                    </div>
+                    <i class="fas fa-arrow-right tarjeta-flecha"></i>
                 </div>
-                <div class="tarjeta-info">
-                    <h3>Panel Admin</h3>
-                    <p>Gestiona materias, estudiantes y configuración</p>
-                </div>
-                <a href="{{ route('timonel.admin') }}" class="tarjeta-flecha">
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
+            </a>
             @endif
 
         </div>

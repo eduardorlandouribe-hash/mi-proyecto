@@ -14,7 +14,7 @@ class TimonelAuthController extends Controller
         return view('timonel.login');
     }
 
-    // verifica que este bien el logi +n
+    // verifica que este bien el login
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -30,6 +30,7 @@ class TimonelAuthController extends Controller
             return match($rol) {
                 'admin' => redirect()->route('timonel.admin'),
                 default => redirect()->route('timonel.index'),
+                'profesor' => redirect()->route('timonel.profesor.index')
             };
         }
 

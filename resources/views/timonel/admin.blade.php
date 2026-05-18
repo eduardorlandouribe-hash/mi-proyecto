@@ -52,17 +52,33 @@
                 <i class="fas fa-user-shield"></i> Roles
             </button>
         </div>
-
         <!-- TAB: MATERIAS -->
         <div id="tabMaterias" class="tab-contenido">
             <div class="seccion-header">
                 <h2>Materias disponibles</h2>
-                <button class="btn-crear" onclick="abrirModal()">
-                    <i class="fas fa-plus"></i> Nueva materia
-                </button>
+                <a href="{{ route('timonel.materias.index') }}" class="btn-crear">
+                    <i class="fas fa-plus"></i> Gestionar materias
+                </a>
             </div>
-            <div class="materias-grid" id="materiasGrid">
-                <p class="cargando">Próximamente...</p>
+            <div class="materias-grid">
+                @forelse($materias as $materia)
+                <div class="materia-card">
+                   <div class="materia-banner" style="background: linear-gradient(135deg, #00aaaa, #007f7f);">
+                        <span>📚</span>
+                    </div>
+                    <div class="materia-body">
+                        <p class="materia-codigo">{{ $materia->codigo }}</p>
+                        <p class="materia-nombre">{{ $materia->nombre }}</p>
+                        <div class="materia-meta">
+                           <span><i class="fas fa-user"></i> {{ $materia->profesor ? $materia->profesor->name : 'Sin profesor' }}</span>
+                            <span><i class="fas fa-clock"></i> {{ $materia->horario }}</span>
+                            <span><i class="fas fa-map-marker-alt"></i> {{ $materia->salon }}</span>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                    <p class="cargando">No hay materias creadas aún.</p>
+                @endforelse
             </div>
         </div>
 

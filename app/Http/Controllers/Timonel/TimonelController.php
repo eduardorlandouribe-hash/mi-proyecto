@@ -26,7 +26,9 @@ class TimonelController extends Controller
             return redirect()->route('timonel.index');
         }
         $usuarios = User::all();
-        return view('timonel.admin', compact('user', ('usuarios')));
+        $materias = \App\Models\Materia::with('profesor')->get();
+
+        return view('timonel.admin', compact('user', 'usuarios', 'materias'));
     }
     public function cambiarRol(Request $request, $id)
     {
@@ -34,5 +36,27 @@ class TimonelController extends Controller
         $user->rol = $request->rol;
         $user->save();
         return back()->with('success', 'Rol actualizado correctamente.');
+    }
+    // Dashboard del profesor
+    public function profesorIndex()
+    {
+        $user = Auth::guard('timonel')->user();
+        $materias = \App\Models\Materia::where('profesor_id', $user->id)
+            ->with('inscripciones')
+            ->get();
+        return view('timonel.profesor.index', compact('user', 'materias'));
+    }
+
+    // Estudiantes de una materia
+    public function profesorEstudiantes($id)
+    {
+        $user = Auth::guard('timonel')->user();
+        $materia = \App\Models\Materia::where('id', $id)
+            ->where('profesor_id', $user->id)
+            ->firstOrFail();
+        $estudiantes = \App\Models\Inscripcion::where('materia_id', $id)
+            ->with(['estudiante', 'estudiante.facturas'])
+            ->get();
+        return view('timonel.profesor.estudiantes', compact('user', 'materia', 'estudiantes'));
     }
 }
