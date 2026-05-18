@@ -11,7 +11,7 @@ use App\Http\Controllers\Timonel\FacturaController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index_pagina_web');
 });
 Route::get('pagina_web', function(){
     return view('index_pagina_web');
