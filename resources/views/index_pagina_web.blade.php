@@ -73,7 +73,7 @@
         </div>
       </div>
 
-      <a href="#" class="link-conoce">Conoce nuestra experiencia →</a>
+      <a href="https://www.ucc.edu.co/por-que-la-ucc" class="link-conoce">Conoce nuestra experiencia →</a>
     </section>
 
 
@@ -144,7 +144,7 @@
           <div class="tarjeta-contenido">
             <h4>Omnicanalidad: estrategia, gestión y experiencia del consumidor</h4>
             <p>La omnicanalidad es más que una tendencia: es una capacidad estratégica.</p>
-            <a href="#" class="btn-tarjeta">Ver información →</a>
+            <a href="https://www.ucc.edu.co/investigacion-sinfoni/sala-de-conocimiento/Paginas/Omnicanalidad-estrategia,-gesti%C3%B3n-y-experiencia-del-consumidor-en-Colombia.aspx" class="btn-tarjeta">Ver información →</a>
           </div>
         </div>
 
@@ -157,7 +157,7 @@
           <div class="tarjeta-contenido">
             <h4>Semillero Desapsico de Psicología, contribuye a la prevención</h4>
             <p></p>
-            <a href="#" class="btn-tarjeta">Ver información →</a>
+            <a href="https://www.ucc.edu.co/investigacion-sinfoni/sala-de-conocimiento/Paginas/Innovaci%C3%B3n-y-cuidado-el-nuevo-horizonte-de-la-Enfermer%C3%ADa.aspx" class="btn-tarjeta">Ver información →</a>
           </div>
         </div>
 
@@ -170,13 +170,13 @@
           <div class="tarjeta-contenido">
             <h4>La Inteligencia Artificial como catalizador del Modelo Educativo</h4>
             <p>La IA no es una simple herramienta. Esta permite optimizar procesos de evaluación.</p>
-            <a href="#" class="btn-tarjeta">Ver información →</a>
+            <a href="https://www.ucc.edu.co/investigacion-sinfoni/sala-de-conocimiento/Paginas/La-Inteligencia-Artificial-como-catalizador-del-Modelo-Educativo-Cr%C3%ADtico-con-Enfoque-de-Competencias-en-la-UCC.aspx" class="btn-tarjeta">Ver información →</a>
           </div>
         </div>
 
       </div>
 
-      <a href="#" class="link-conoce">Ver listado →</a>
+      <a href="https://www.ucc.edu.co/investigacion-sinfoni/sala-de-conocimiento" class="link-conoce">Ver listado →</a>
     </section>
 
   </main>
