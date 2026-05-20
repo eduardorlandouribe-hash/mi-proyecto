@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- Header -->
   <header class="header">
     <div class="header-izquierda">
       <button class="menu-btn" aria-label="Abrir menú">☰</button>
@@ -18,23 +18,23 @@
     </div>
 
     <nav class="nav-principal">
-      <a href="#">Oferta educativa</a>
-      <a href="#">Aspirante</a>
-      <a href="#">Estudiante</a>
-      <a href="#">Profes</a>
-      <a href="#">Equipo administrativo</a>
+      <a href="https://www.ucc.edu.co/programas/Paginas/default.aspx">Oferta educativa</a>
+      <a href="https://www.ucc.edu.co/aspirante">Aspirante</a>
+      <a href="https://www.ucc.edu.co/estudiante">Estudiante</a>
+      <a href="https://www.ucc.edu.co/profesor">Profes</a>
+      <a href="https://www.ucc.edu.co/administrativo">Equipo administrativo</a>
     </nav>
 
     <nav class="nav-secundario">
-      <a href="#">Alumni</a>
-      <a href="#">Proveedores</a>
-      <a href="#">Financiación</a>
+      <a href="https://www.ucc.edu.co/egresado">Alumni</a>
+      <a href="https://www.ucc.edu.co/empresa">Proveedores</a>
+      <a href="https://www.comuna.com.co/index.php">Financiación</a>
     </nav>
 
   </header>
 
 
-  <!-- CUERPO -->
+  <!-- Cuerpo -->
   <main>
 
     <!-- SECCIÓN 1: UCC EN CIFRAS -->
