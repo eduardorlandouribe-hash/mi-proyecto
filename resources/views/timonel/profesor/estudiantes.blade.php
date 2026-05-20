@@ -148,7 +148,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- Header -->
   <header class="header">
     <div class="header-logo">
       <img src="{{ asset('logos/logo.png') }}" alt="UCC"/>
