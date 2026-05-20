@@ -268,7 +268,7 @@
     </div>
   </header>
 
-  <!-- MAIN -->
+  <!-- Main -->
   <main class="main">
 
     <div class="pagina-header">

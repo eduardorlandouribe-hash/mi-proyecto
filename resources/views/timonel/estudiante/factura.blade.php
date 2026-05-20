@@ -246,12 +246,12 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- Header -->
   <header class="header-factura">
     <img src="{{ asset('logos/logo.png') }}" alt="Universidad Cooperativa de Colombia"/>
   </header>
 
-  <!-- MAIN -->
+  <!-- Main -->
   <main class="main">
 
     <div class="factura-doc">

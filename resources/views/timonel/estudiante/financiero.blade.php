@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- Header -->
   <header class="header">
     <div class="header-logo">
       <img src="{{ asset('logos/logo.png') }}" alt="UCC"/>
@@ -34,7 +34,7 @@
     </div>
   </header>
 
-  <!-- MAIN -->
+  <!-- Main -->
   <main class="main">
 
     <div class="pagina-header">
